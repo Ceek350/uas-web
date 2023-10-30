@@ -1,0 +1,66 @@
+:root {
+  box-sizing: border-box;
+}
+
+html,
+body,
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#apps {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid blanchedalmond;
+  width: 400px;
+  height: 400px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#inGame {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#result {
+  font-size: 20px;
+}
+
+.games {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  width: 30%;
+  margin: 10px 15px;
+  padding: 25px;
+  text-align: center;
+  font-size: 40px;
+  background-color: bisque;
+}
+
+.menu:hover {
+  cursor: pointer;
+  background-color: burlywood;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1) ease-in-out;
+  transform: scale(1.05);
+}

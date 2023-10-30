@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='oiii.css') }}">
+
+    <title>oke Mini Games</title>
+</head>
+
+<body>
+    <div id="apps">
+        <div class="summary">
+            <h1 class="title">MATCH RESULT</h1>
+            <br />
+            <div id="inGame">{{ inGame }}</div>
+            <div id="result">{{ result }}</div>
+
+        </div>
+        <div class="games">
+            <a class="menu" href="/pick_option/🖐">🖐</a>
+            <a class="menu" href="/pick_option/✌">✌</a>
+            <a class="menu" href="/pick_option/✊">✊</a>
+        </div>
+    </div>
+</body>
+
+</html>
