@@ -10,7 +10,68 @@
   <style>
     body {
       background-color:rgba(12, 12, 12, 0.818);
+      transition: 0.5s;
     }
+
+    body.active {
+      background: white;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #toggle {
+      position: relative;
+      display: block;
+      margin-top: 10px;
+      width: 70px;
+      height: 30px;
+      border-radius: 10px;
+      background-color: #fffbfb;
+      transition: 0.5s;
+      cursor: pointer;
+      box-shadow: inset 0 8px 60px rgba(0,0,0,0.1), inset 0 8px 8px rgba(0,0,0,0.1), inset 0 -4px 4px rgba(0,0,0,0.1);
+    }
+
+    #toggle.active {
+      background: #0a0a0a;
+      box-shadow: inset 0 2px 60px rgba(0,0,0,0.1), inset 0 2px 8px rgba(0,0,0,0.1), inset 0 -4px 8px rgba(0,0,0,0.5);
+    }
+
+    #toggle .indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(to bottom, #444, #222);
+      border-radius: 50%;
+      transform: scale(0.9);
+      box-shadow: 0 8px 40px rgba(250, 248, 248, 0.5), inset 0 4px 4px rgba(255,255,255,0.2), inset 0 -4px 4px rgba(255,255,255,0.2);
+      transition: 0.5s;
+    }
+
+    #toggle.active .indicator {
+      left: 40px;
+      background: linear-gradient(to bottom, #444, #222);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1), inset 0 4px 4px rgba(255,255,255,0.1), inset 0 -4px 4px rgba(255,255,255,0.1);
+    }
+
+    #banner {
+      margin-top: 30px;
+    }
+
+    #card:hover {
+      scale: 1.15;
+    }
+
+    #logo {
+      font-size: 40px;
+    }
+
     
   </style>
 
@@ -20,21 +81,24 @@
   <!-- ini navbar -->
   <nav class="navbar navbar-expand-lg bg-dark fixed-top shadow bg-dark text-light-lg">
     <div class="container ">
-      <a class="navbar-brand text-light" href="#">Zero Store</a>
+      <a class="navbar-brand text-light" id="logo" href="#">Zero Store</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <div id="toggle">
+        <i class="indicator"></i>
+      </div>
       <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
         <ul class="navbar-nav ">
-          <li class="nav-item ">
-            <a class="nav-link activec text-light" aria-current="page" href="#">Home</a>
+          <li class="nav-item " >
+            <a class="nav-link activec text-light" aria-current="page" href="#" style="font-size: 22px;">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">Cek pesanan</a>
+            <a class="nav-link text-light" href="#" style="font-size: 22px;">Cek pesanan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="AboutUs.html">Tentang kami</a>
+            <a class="nav-link text-light" href="AboutUs.html" style="font-size: 22px;">Tentang kami</a>
           </li>
         </ul>
       </div>
@@ -44,7 +108,7 @@
   <br />
   <!-- isi content -->
   <div class="container d-flex mt-5">
-    <img src="bahan/images/gmb1.jpg" class="rounded-4 mx-auto d-block  w-100" style="height: 500px;" alt="...">
+    <img src="bahan/images/gmb1.jpg" class="rounded-4 mx-auto d-block  w-100" id="banner" style="height: 500px;" alt="...">
   </div>
   <div class="container mt-2">
     <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
@@ -64,7 +128,7 @@
   </div>
   <div class="container text-center ">
     <div class="d-flex justify-content-center flex-row mb-3">
-      <div class="p-2">
+      <div class="p-2" id="card">
         <div class="card shadow bg-dark text-light" style="width: 13rem;">
           <img src="bahan/images/ff.png" class="card-img-top" alt="...">
           <div class="card-body">
@@ -72,7 +136,7 @@
           </div>
         </div>
       </div>
-      <div class="p-2">
+      <div class="p-2" id="card">
         <div class="card shadow bg-dark text-light" style="width: 13rem;">
           <img src="bahan/images/GenshinImpact.jpg" class="card-img-top" alt="...">
           <div class="card-body">
@@ -80,7 +144,7 @@
           </div>
         </div>
       </div>
-      <div class="p-2">
+      <div class="p-2" id="card">
         <div class="card shadow bg-dark text-light" style="width: 13rem;">
           <img src="bahan/images/mlbb.jpg" class="card-img-top" alt="...">
           <div class="card-body">
@@ -88,7 +152,7 @@
           </div>
         </div>
       </div>
-      <div class="p-2">
+      <div class="p-2" id="card">
         <div class="card shadow bg-dark text-light" style="width: 13rem;">
           <img src="bahan/images/pubgm.jpg" class="card-img-top" alt="...">
           <div class="card-body">
@@ -100,7 +164,7 @@
     </div>
     <div class="container text-center ">
       <div class="d-flex justify-content-center flex-row mb-3">
-        <div class="p-2">
+        <div class="p-2" id="card">
           <div class="card shadow bg-dark text-light" style="width: 13rem;">
             <img src="bahan/images/valorant.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -108,7 +172,7 @@
             </div>
           </div>
         </div>
-        <div class="p-2">
+        <div class="p-2" id="card">
           <div class="card shadow bg-dark text-light" style="width: 13rem;">
             <img src="bahan/images/coc.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -116,7 +180,7 @@
             </div>
           </div>
         </div>
-        <div class="p-2">
+        <div class="p-2" id="card">
           <div class="card shadow bg-dark text-light" style="width: 13rem;">
             <img src="bahan/images/cor.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -124,7 +188,7 @@
             </div>
           </div>
         </div>
-        <div class="p-2">
+        <div class="p-2" id="card">
           <div class="card shadow bg-dark text-light" style="width: 13rem;">
             <img src="bahan/images/hayday.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -137,7 +201,7 @@
       </div>
       <div class="container text-center ">
         <div class="d-flex justify-content-center flex-row mb-3">
-          <div class="p-2">
+          <div class="p-2" id="card">
             <div class="card shadow bg-dark text-light bg-dark text-light" style="width: 13rem;">
               <img src="bahan/images/cod.jpg" class="card-img-top" alt="...">
               <div class="card-body">
@@ -145,7 +209,7 @@
               </div>
             </div>
           </div>
-          <div class="p-2">
+          <div class="p-2" id="card">
             <div class="card shadow bg-dark text-light" style="width: 13rem;">
               <img src="bahan/images/sausgemen.jpg" class="card-img-top" alt="...">
               <div class="card-body">
@@ -153,7 +217,7 @@
               </div>
             </div>
           </div>
-          <div class="p-2">
+          <div class="p-2" id="card">
             <div class="card shadow bg-dark text-light" style="width: 13rem;">
               <img src="bahan/images/lol.jpg" class="card-img-top" alt="...">
               <div class="card-body">
@@ -161,7 +225,7 @@
               </div>
             </div>
           </div>
-          <div class="p-2">
+          <div class="p-2" id="card">
             <div class="card shadow bg-dark text-light" style="width: 13rem;">
               <img src="bahan/images/honkai.jpg" class="card-img-top" alt="...">
               <div class="card-body">
@@ -177,15 +241,15 @@
     <div class="container d-flex">
       <div class="row d-flex align-content-center" style="height: 200px;">
         <div class="col">
-          <h5 class="text-start ms-0">ZERO STORE</h5>
-            <P>Zero Store adalah tempat top up games yang aman, murah dan terpercaya. Proses cepat 1-3 Detik. Open 24 jam. Payment terlengkap. Note: Pengembangan</P>
+          <h2 class="text-start ms-0">ZERO STORE</h2>
+            <P style="font-size: 18px;">Zero Store adalah tempat top up games yang aman, murah dan terpercaya. Proses cepat 1-3 Detik. Open 24 jam. Payment terlengkap. Note: Pengembangan</P>
         </div>
         <div class="col">
           <div class="row">
             <div class="col ">
-              <h5 class="">Menu</h5>
+              <h4>Menu</h4>
               <div class="list-group-item mt-2">
-                <a href="#" class="list-group-item disabled"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                <a href="#" class="list-group-item disabled" style="font-size: 18px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
                   <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
                 </svg>Home</a>
                 <a href="#" class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
@@ -197,17 +261,17 @@
               </div>
             </div>
             <div class="col">
-              <h5>Social Media</h5>
+              <h4>Social Media</h4>
               <div class="list-group-item mt-2">
                 <a href="#" class="list-group-item disabled"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
                   <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                </svg>First item</a>
+                </svg>🌐ⓕ Facebook</a>
                 <a href="#" class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
                   <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                </svg>Second item</a>
+                </svg>🌐📷 Instagram</a>
                 <a href="#" class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
                   <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-                </svg>Kalkulator Ml</a>
+                </svg>🌐🐤 Tweet</a>
               </div>
             </div>
           </div>
@@ -218,6 +282,14 @@
 
   </div>
 
+<script>
+  const body = document.querySelector('body');
+  const toggle = document.getElementById('toggle');
+  toggle.onclick = function(){
+    toggle.classList.toggle('active')
+    body.classList.toggle('active')
+  }
+</script>
 </body>
 
 </html>
