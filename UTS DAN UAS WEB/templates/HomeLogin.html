@@ -221,6 +221,11 @@
 	  margin: 0 0 10px 0;
     }
 
+    .kartu a {
+      text-decoration: none;
+      color: white;
+    }
+
     /* The Modal (background) */
     .modal {
       display: none; /* Hidden by default */
@@ -322,11 +327,13 @@
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div id="toggle">
-        <i class="indicator"></i>
-      </div>
       <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
         <ul class="navbar-nav ">
+          <li style="margin-right: 20px; margin-top: 1px;">
+            <div id="toggle">
+              <i class="indicator"></i>
+            </div>
+          </li>
           <li class="nav-item " >
             <a class="nav-link activec text-light" aria-current="page" href="#" style="font-size: 22px;">Home</a>
           </li>
@@ -388,7 +395,7 @@
   </div>
   <div class="container mt-2">
     <div class="d-grid gap-2 d-md-block">
-      <button class="btn btn-primary" type="button">GAMES</button>
+      <button class="btn btn-primary" type="button" ><a class="nav-link text-light" href="/cekinvoice/">CEK INVOICE</a></button>
       <button class="btn btn-primary" type="button">VOUCHER</button>
     </div>
   </div>
@@ -397,8 +404,8 @@
       <div class="p-2" id="card">
         <div class="card shadow bg-dark text-light" id="kotak" style="width: 13rem;">
           <img src="{{url_for('static', filename = 'img/ff.png')}}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">FREE FIRE</p>
+          <div class="card-body kartu">
+            <a class="card-text" href="/freefire">FREE FIRE</a>
           </div>
         </div>
       </div>
@@ -414,7 +421,7 @@
         <div class="card shadow bg-dark text-light" id="kotak" style="width: 13rem;">
           <img src="{{url_for('static', filename = 'img/mlbb.jpg')}}" class="card-img-top" alt="...">
           <div class="card-body">
-            <p class="card-text">MOBILE LEGENDS BANG</p>
+            <p class="card-text">MOBILE LEGENDS</p>
           </div>
         </div>
       </div>
@@ -568,7 +575,6 @@ window.onclick = function(event) {
 
 //logout
 function logout() {
-
     window.location.href = '/'
 }
 
