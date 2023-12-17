@@ -4,7 +4,7 @@ import MySQLdb.cursors
 import MySQLdb.cursors, re, hashlib
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='static')
 
 app.secret_key = 'zerostore'
 
