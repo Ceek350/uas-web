@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLBB</title>
+    <title>Genshin Impact</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
@@ -221,10 +221,10 @@
                 <a class="nav-link activec text-light" aria-current="page" href="#" style="font-size: 22px; text-decoration: underline;">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="/cekinvoice/" style="font-size: 22px;">Cek pesanan</a>
+                <a class="nav-link text-light" href="{{ url_for('cekinvoice') }}" style="font-size: 22px;">Cek pesanan</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="/aboutus/" style="font-size: 22px;">Tentang kami</a>
+                <a class="nav-link text-light" href="{{ url_for('aboutus') }}" style="font-size: 22px;">Tentang kami</a>
               </li>
               <li>
                 <button class="toggle-btn" onclick="toggleSidebar()" style="font-size: 30px;">🛒</button>
@@ -251,8 +251,8 @@
         <div class="row mt-5 ">
           <div class="col-3 well bg-light border mt-lg-3 pt-3 gap-2" id="kotak_judul" style=" border-radius: 5%;">
             <div class="well">
-              <img src="{{url_for('static', filename = 'img/mlbb.jpg')}}" id="avatar" class="border-" height="150" width="150" alt="Avatar">
-              <h4 class="mt3">Mobile Legend</h4>
+              <img src="{{url_for('static', filename = 'img/GenshinImpact.jpg')}}" id="avatar" class="border-" height="150" width="150" alt="Avatar">
+              <h4 class="mt3">Genshin Impact</h4>
             </div>
             <div class="well">
               <h4 class="text-start" style="align-items: center; justify-content: center;">Cara Top Up :</h4>

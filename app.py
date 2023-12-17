@@ -106,11 +106,11 @@ def register():
     return render_template('register.html', msg=msg)
 
 
-@app.route("/cekinvoice/")
+@app.route("/cekinvoice")
 def cek():
     return render_template('Cek_Invoice.html')
 
-@app.route("/aboutus/")
+@app.route("/aboutus")
 def aboutus():
     return render_template('aboutus.html')
 
