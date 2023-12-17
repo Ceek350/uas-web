@@ -119,6 +119,18 @@ def aboutus():
 def ff():
     return render_template('freefire.html')
 
+@app.route("/genshin")
+def gi():
+    return render_template('genshin.html')
+
+@app.route("/mlbb")
+def mlbb():
+    return render_template('mlbb.html')
+
+@app.route("/pubgm")
+def pubgm():
+    return render_template('pubgm.html')
+
 
 
 if __name__ == '__main__' :

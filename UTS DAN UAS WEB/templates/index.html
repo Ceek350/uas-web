@@ -282,7 +282,7 @@
     }
 
     @media only screen and (min-width: 400px) {
-      #banner {max-height: 220px; margin-top: 160px;}
+      #banner {max-width: 100%; height: auto; margin-top: 160px; max-height: 250px;}
       #card {max-width: 100px; margin-right: 6px;}
       #kotak {max-width: 100px;}
       #zerotext {font-size: 20px; padding-top: 20px;}
@@ -295,7 +295,7 @@
     }
 
     @media only screen and (min-width: 600px) {
-      #banner {max-height: 220px;}
+      #banner {max-height: 220px; max-width: 100%; height: auto; }
       #card {max-width: 2200px; margin-right: 6px;}
       #kotak {max-width: 120px;}
       #zerotext {font-size: 20px; padding-top: 10px;}
@@ -307,7 +307,7 @@
     }
 
     @media only screen and (min-width: 986px) {
-      #banner {max-height: 500px; padding-top: 5px;}
+      #banner {max-height: 500px; padding-top: 5px; max-width: 100%; height: auto; }
       #card {max-width: 220px; margin-right: 6px;}
       #kotak {max-width: 200px;}
       #zerotext {font-size: 20px; padding-top: 10px;}
@@ -413,7 +413,7 @@
         <div class="card shadow bg-dark text-light" id="kotak" style="width: 13rem;">
           <img src="{{url_for('static', filename = 'img/GenshinImpact.jpg')}}" class="card-img-top" alt="...">
           <div class="card-body">
-            <p class="card-text">GenshinImpact</p>
+            <a class="card-text" href="/genshin" style="text-transform: uppercase; text-decoration: none; color: white; font-size: 15px;">Genshin Impact</a>
           </div>
         </div>
       </div>
@@ -421,7 +421,7 @@
         <div class="card shadow bg-dark text-light" id="kotak" style="width: 13rem;">
           <img src="{{url_for('static', filename = 'img/mlbb.jpg')}}" class="card-img-top" alt="...">
           <div class="card-body">
-            <p class="card-text">MOBILE LEGENDS</p>
+            <a class="card-text" href="/mlbb" style="text-transform: uppercase; text-decoration: none; color: white; font-size: 15px;">Mobile Legend</a>
           </div>
         </div>
       </div>
@@ -429,7 +429,7 @@
         <div class="card shadow bg-dark text-light" id="kotak" style="width: 13rem;">
           <img src="{{url_for('static', filename = 'img/pubgm.jpg')}}" class="card-img-top" alt="...">
           <div class="card-body">
-            <p class="card-text">PUBG MOBILE</p>
+            <a class="card-text" href="/pubgm" style="text-transform: uppercase; text-decoration: none; color: white; font-size: 15px;">PUBG Mobile</a>
           </div>
         </div>
       </div>
@@ -457,7 +457,7 @@
           <div class="card shadow bg-dark text-light" id="kotak" style="width: 13rem;">
             <img src="{{url_for('static', filename = 'img/cor.jpg')}}" class="card-img-top" alt="...">
             <div class="card-body">
-              <p class="card-text">CLASH OF ROYALE</p>
+              <p class="card-text">CLASH ROYALE</p>
             </div>
           </div>
         </div>
@@ -494,7 +494,7 @@
             <div class="card shadow bg-dark text-light" id="kotak" style="width: 13rem;">
               <img src="{{url_for('static', filename = 'img/lol.jpg')}}" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text">Leguen OF LEGENDS</p>
+                <p class="card-text">LEAGUE LEGEND</p>
               </div>
             </div>
           </div>
