@@ -10,10 +10,11 @@ app = Flask(__name__)
 app.secret_key = 'zerostore'
 
 # Enter your database connection details below
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'zerostore'
+app.config['MYSQL_HOST'] = 'sql.freedb.tech'
+app.config['MYSQL_USER'] = 'freedb_zerostore'
+app.config['MYSQL_PORT'] = 3306
+app.config['MYSQL_PASSWORD'] = '9XcMJypct#5tX&J'
+app.config['MYSQL_DB'] = 'freedb_zerostore'
 
 # Intialize MySQL
 mysql = MySQL(app)
@@ -95,7 +96,7 @@ def register():
             hash = hashlib.sha1(hash.encode())
             password = hash.hexdigest()
             # Account doesn't exist, and the form data is valid, so insert the new account into the accounts table
-            cursor.execute('INSERT INTO user_data VALUES (NULL, %s, %s)', (email, password,))
+            cursor.execute('INSERT INTO user_data (id, email, password) VALUES (NULL, %s, %s)', (email, password,))
             mysql.connection.commit()
             msg = 'You have successfully registered! now u can login'
     elif request.method == 'POST':
