@@ -2,7 +2,35 @@ from flask import Flask, render_template, url_for, request, redirect, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import MySQLdb.cursors, re, hashlib
-import sqlite3
+from collections import namedtuple
+from inspect import getfullargspec
+from unittest.mock import patch
+
+import invoke
+
+def fix_annotations():
+    """
+    Pyinvoke doesn't accept annotations by default, this fix that
+    Based on: @zelo's fix in https://github.com/pyinvoke/invoke/pull/606
+    Context in: https://github.com/pyinvoke/invoke/issues/357
+        Python 3.11 https://github.com/pyinvoke/invoke/issues/833
+    """
+
+    ArgSpec = namedtuple("ArgSpec", ["args", "defaults"])
+
+    def patched_inspect_getargspec(func):
+        spec = getfullargspec(func)
+        return ArgSpec(spec.args, spec.defaults)
+
+    org_task_argspec = invoke.tasks.Task.argspec
+
+    def patched_task_argspec(*args, **kwargs):
+        with patch(
+            target="inspect.getargspec", new=patched_inspect_getargspec, create=True
+        ):
+            return org_task_argspec(*args, **kwargs)
+
+    invoke.tasks.Task.argspec = patched_task_argspec
 
 
 app = Flask(__name__)
