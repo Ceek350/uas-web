@@ -64,11 +64,11 @@ def login():
 @app.route('/logout')
 def logout():
     # Remove session data, this will log the user out
-   session.pop('loggedin', None)
-   session.pop('id', None)
-   session.pop('email', None)
-   # Redirect to login page
-   return render_template('index.html')
+    session.pop('loggedin', None)
+    session.pop('id', None)
+    session.pop('email', None)
+    # Redirect to login page
+    return render_template('index.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
