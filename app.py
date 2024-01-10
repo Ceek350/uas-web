@@ -112,7 +112,7 @@ def cek():
 
 @app.route("/aboutus")
 def aboutus():
-    return render_template('aboutus.html')
+    return render_template('AboutUs.html')
 
 #GAME
 @app.route("/freefire")
