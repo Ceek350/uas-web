@@ -47,7 +47,7 @@ def success_login():
 def login():
     # Output message if something goes wrong...
     msg = ''
-    if request.method == 'POST' and 'email' in request.form and 'password' in request.form:
+    if request.method == 'POST' and 'GET' and 'email' in request.form and 'password' in request.form:
         # Create variables for easy access
         email = request.form['email']
         password = request.form['password']
