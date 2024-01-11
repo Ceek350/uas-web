@@ -2,9 +2,23 @@ from flask import Flask, render_template, url_for, request, redirect, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import MySQLdb.cursors, re, hashlib
+import requests
+import schedule
+import time
 
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
+
+def call_backend():
+    backend_url = 'https://zerostore.onrender.com'
+
+    try:
+        response = requests.get(backend_url)
+        print(f"Backend called successfully. Response: {response.text}")
+    except Exception as e:
+        print(f"Error calling backend: {e}")
+
+schedule.every(14).minutes.do(call_backend)
 
 app.secret_key = 'zerostore'
 
@@ -135,3 +149,9 @@ def pubgm():
 
 if __name__ == '__main__' :
     app.run(debug=True)
+    from threading import Thread
+    Thread(target=app.run)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
